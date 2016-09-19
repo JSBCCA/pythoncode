@@ -1,3 +1,6 @@
+# Glitch-fixing placeholder
+
+
 def myshop(popcorn=0,
            coke=0,
            cookies=0, ):

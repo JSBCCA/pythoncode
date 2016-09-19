@@ -1,10 +1,5 @@
-def ask(message):
-    print(message)
-    return input()
-
-
-males = ask("What are the names of the males?")  # {stuff, stuff}
-females = ask("What are the names of the females?")
+males = input("What are the names of the males?")  # {stuff, stuff}
+females = input("What are the names of the females?")
 
 
 def mating_pairs(males, females):

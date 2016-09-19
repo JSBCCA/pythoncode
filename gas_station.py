@@ -6,9 +6,8 @@ def price(x, y):
 
 
 def gas():
-    print("Welcome!\nWhat kind of gas would you like?\nRegular : $2.09\n"
-          "Midgrade : $2.29\nPremium : $2.49\n")
-    gas = input().strip().lower()
+    gas = input("Welcome!\nWhat kind of gas would you like?\nRegular : $2.09\n"
+                "Midgrade : $2.29\nPremium : $2.49\n").strip().lower()
     if gas == "regular":
         price(2.09, gas)
     elif gas == "midgrade":

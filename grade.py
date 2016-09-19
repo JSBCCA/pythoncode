@@ -1,9 +1,3 @@
-def ask(message):
-    """ Prints a message and returns input"""
-    print(message)
-    return input()
-
-
 def remove(numlist):
     """Removes negative numbers and numbers above 100 from a list"""
     numremove = []
@@ -44,18 +38,19 @@ ltr = lettergrade
 if __name__ == '__main__':
 
     assignment_list = []
-    a = ask("How many students do you have?")
+    a = input("How many students do you have? ")
     while True:
         grades = []
-        name = (ask(
-            "What is the name of this assignment? (Enter 'Q' to quit).").strip(
-            ).lower())
+        name = (
+            input("What is the name of this assignment? (Enter 'Q' to quit). ")
+        )
+        name = name.strip().lower()
         if name == "q":
             break
         for c in range(int(a)):
             c = -1
             while c < 0 or c > 100:
-                c = int(ask("Enter grade:"))
+                c = int(input("Enter grade: "))
                 grades.append(c)
                 remove(grades)
         assignment_list.append([name, grades])

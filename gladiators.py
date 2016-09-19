@@ -6,13 +6,8 @@ import os
 os.system("printf '\\e[8;23;52t'")
 
 
-def ask(message):
-    print(message)
-    return input()
-
-
 def first():
-    name1 = ask("What is Player one's name?").strip().title()
+    name1 = input("What is Player one's name?").strip().title()
     if name1 in ['James', 'Ragnarok', 'Infinity', 'Oblivion', 'Perseus',
                  'Excalibur', 'Big the Cat', 'Zero', 'Shadow', 'Omega',
                  'Edgar', 'Neo', 'Sibert', 'Pruitt', 'Bullock', 'Peyton',
@@ -24,7 +19,7 @@ def first():
 
 
 def second():
-    name2 = ask("What is Player two's name?").strip().title()
+    name2 = input("What is Player two's name?").strip().title()
     if name2 in ['James', 'Ragnarok', 'Infinity', 'Oblivion', 'Perseus',
                  'Excalibur', 'Big the Cat', 'Zero', 'Shadow', 'Omega',
                  'Edgar', 'Neo', 'Sibert', 'Pruitt', 'Bullock', 'Peyton',
