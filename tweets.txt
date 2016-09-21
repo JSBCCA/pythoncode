@@ -1,0 +1,12 @@
+eddie: 8297
+isabelle: 8339
+carol: 8347
+harold: 8221
+kramer: 8240
+anna: 8428
+louise: 8250
+betty: 8406
+damien: 8397
+frank: 8345
+jake: 8312
+gabe: 8418
