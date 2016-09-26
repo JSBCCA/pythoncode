@@ -21,7 +21,7 @@ def even_odd(text):
         if i % 2 == 0:
             new += text[i].upper()
         else:
-            new += text[i]
+            new += text[i].lower()
     return new
 
 
