@@ -40,5 +40,5 @@ def crazy_caps(text):
         if (i % 2) == r:
             new += text[i].upper()
         else:
-            new += text[i]
+            new += text[i].lower()
     return new
