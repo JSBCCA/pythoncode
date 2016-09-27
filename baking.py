@@ -1,8 +1,8 @@
-import temp_program
+import temperature
 
 
 def get_preheat_instructions(f):
-    cels = str(temp_program.c_c(f))
+    cels = str(temperature.c_c(f))
     fahr = str(f)
     return "Preheat oven to " + fahr + " degrees F (" + cels + " degrees C)."
 
