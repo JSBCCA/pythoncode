@@ -1,16 +1,10 @@
-"""
-4) Print out the list of words containing all 5 vowels in order.
-5) Print out the list of words containing your initials.
-(Letters must be in order, but not necessarily consecutive.)
-"""
-
 with open('sowpods.txt', 'r') as sp:
-    content = sp.read().lower().split()
+    contents = sp.read().lower().split()
 
 
 def five_vowels():
     words = []
-    for w in content:
+    for w in contents:
         if all(v in w for v in 'aeiou'):
             words.append(w)
     print("\nList of words containing all 5 vowels, not including 'y':")
@@ -19,7 +13,7 @@ def five_vowels():
 
 def six_vowels():
     words = []
-    for w in content:
+    for w in contents:
         if all(v in w for v in 'aeiouy'):
             words.append(w)
     print("\nList of words containing all 6 vowels, including 'y':")
@@ -28,7 +22,7 @@ def six_vowels():
 
 def no_vowels():
     words = []
-    for w in content:
+    for w in contents:
         if all(v not in w for v in 'aeiou'):
             words.append(w)
     print("\nList of words containing none of the 5 main vowels:")
@@ -37,23 +31,21 @@ def no_vowels():
 
 def order_vowels():
     words = []
-    for word in content:
-        for w in word:
-            if w == 'a':
-                # ...
-                words.append(word)
-    print(
-        "\nList of words containing all 5 vowels in order, not including 'y':")
+    for w in contents:
+        if 'a' in w and 'e' in w and 'i' in w and 'o' in w and 'u' in w:
+            if w.index('a') < w.index('e') < w.index('i') < w.index(
+                    'o') < w.index('u'):
+                words.append(w)
+    print("\nList of words containing the main 5 vowels in order:")
     print(words)
 
 
 def initials():
     words = []
-    for word in content:
-        for w in word:
-            if w == 'j':
-                # ...
-                words.append(word)
+    for w in contents:
+        if 'j' in w and 'e' in w and 's' in w:
+            if w.index('j') < w.index('e') < w.index('s'):
+                words.append(w)
     print("\nList of words containing my 3 initials in order:")
     print(words)
 
