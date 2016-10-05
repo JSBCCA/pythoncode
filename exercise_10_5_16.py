@@ -1,14 +1,15 @@
-"""
-Today's challenge will be to do a word association game in python where the computer
-finds words that begin with the same letter as the end of the previous word.
-
-Example:
->> dog
->> goldfish
->> hippopotamus
->> snake
-etc.
-
-Recreate this game using the attached text file of pokemon names, and see what
-the longest contiguous chain you can get. There can be no duplicate names!
-"""
+from random import choice
+with open('pokemon.txt', 'r') as file:
+    pokemon = file.read().strip().lower().split('\n')
+poke = choice(pokemon)
+p_list = [poke]
+while True:
+    print(poke)
+    pokemon.remove(poke)
+    compatible = list(filter(lambda n: n[0] == poke[-1], pokemon))
+    if len(compatible) > 0:
+        poke = choice(compatible)
+        p_list.append(poke)
+    else:
+        break
+print('\n' + str(len(p_list)))
