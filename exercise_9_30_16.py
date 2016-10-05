@@ -1,22 +1,11 @@
-import random
-
-
-def gibber_gener():
-    low = "abcdefghijklmnopqrstuvwxyz"
-    upp = low.upper()
-    num = "0123456789"
-    sym = "!@#$%&*_+><?"
-    gibber = ''
-    rand = random.randint(4, 8)
-    x = [low, upp, num, sym]
-    random.shuffle(x)
-    for string in x:
-        gibber += random.choice(string)
-    for i in range(rand):
-        item = random.choice([low, upp, num, sym])
-        gibber += random.choice(item)
-    print(gibber)
-
-
-if __name__ == "__main__":
-    gibber_gener()
+from random import randint, choice, shuffle
+password = ''
+rand = randint(4, 8)
+items = ["abcdefghijklmnopqrstuvwxyz", "ABCDEFGHIJKLMNOPQrstuvwXYZ",
+         "0123456789", "!@#$%&*_+>:;\/<?"]
+shuffle(items)
+for string in items:
+    password += choice(string)
+for i in range(rand):
+    password += choice(choice(items))
+print(password)
