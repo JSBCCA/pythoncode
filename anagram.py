@@ -2,7 +2,7 @@ from random import shuffle, choice
 import time
 import sys
 
-wordlist = ['purple', 'blue', 'green', 'yellow', 'orange', 'red', 'pink',
+original = ['purple', 'blue', 'green', 'yellow', 'orange', 'red', 'pink',
             'white', 'gray', 'black', 'brown', 'ant', 'horse', 'dog', 'cat',
             'food', 'house', 'cheese', 'pizza', 'hamburger', 'shark', 'bird',
             'bat', 'baseball', 'football', 'video', 'game', 'hero', 'infinity',
@@ -33,15 +33,51 @@ wordlist = ['purple', 'blue', 'green', 'yellow', 'orange', 'red', 'pink',
             'ship', 'robot', 'mouse', 'house', 'alone', 'create', 'fight',
             'flashlight', 'deodorant', 'star', 'sky', 'vision', 'vampire',
             'past', 'door', 'present', 'future', 'time', 'space', 'coffin',
-            'ghost', 'zombie', 'heaven', 'chocolate', 'candy', 'sweet', 'rude']
+            'ghost', 'zombie', 'heaven', 'chocolate', 'candy', 'sweet',
+            'rude', 'forgive', 'computer', 'apocalypse', 'jupiter', 'mercury',
+            'brutal', 'flower', 'genius', 'window', 'muscle', 'miniscule',
+            'humongous', 'homunculus', 'terrifying', 'reindeer', 'incredible',
+            'watermelon', 'apricot', 'pumpkin', 'royalty', 'country', 'ear']
+
+wordlist = []
+mode = input("Easy, Medium, or Hard? ").lower().strip()
+if mode == "easy":
+    for i in original:
+        if len(i) < 6:
+            wordlist.append(i)
+    time.sleep(1)
+    print("\n" * 25)
+elif mode == "medium":
+    for i in original:
+        if (len(i) >= 5) and (len(i) < 7):
+            wordlist.append(i)
+    time.sleep(1)
+    print("\n" * 25)
+elif mode == "hard":
+    for i in original:
+        if len(i) > 7:
+            wordlist.append(i)
+    time.sleep(1)
+    print("\n" * 25)
+elif mode == 'q':
+    sys.exit()
+else:
+    for i in original:
+        if len(i) < 6:
+            wordlist.append(i)
+    time.sleep(1)
+    print("\n" * 25)
 
 while True:
     x = False
+    if len(wordlist) == 0:
+        print("You win! Congratulations!")
+        sys.exit()
     word_true = choice(wordlist)
     word_ana = list(word_true)
     while x is False:
         shuffle(word_ana)
-        if word_ana != word_true:
+        if word_ana != list(word_true):
             x = True
     word_ana = ''.join(word_ana)
     guess = False
@@ -52,6 +88,7 @@ while True:
             sys.exit()
         elif guess == word_true:
             print("Correct!")
+            wordlist.remove(word_true)
             time.sleep(2)
             print("\n" * 25)
         elif set(guess) != set(word_true):
