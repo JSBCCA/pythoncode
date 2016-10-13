@@ -1,0 +1,25 @@
+Tony Stark: $17526.42
+Bruce Banner: $17929.51
+Thor Odinson: $23807.54
+Pepper Potts: $11317.2
+Ziggy Stardust: $16411.93
+Stevie Wonder: $18798.08
+Steven Rogers: $16093.08
+Natalia Romanova: $16813.86
+Marlon Jackson: $18417.19
+Natalie Prass: $18617.2
+Tito Jackson: $17086.84
+Jackie Jackson: $19172.16
+Marlon Brando: $18946.93
+Randy Jackson: $20891.93
+Selina Kyle: $20785.2
+Lois Lane: $18476.96
+Will Johnson: $17873.56
+Clark Kent: $21522.32
+Steve McQueen: $12126.47
+Michael Jackson: $18339.27
+Jermaine Jackson: $23510.64
+Janet Jackson: $20350.39
+Marcus Aelius: $17666.74
+Bruce Wayne: $21295.88
+Sum: $443777.3
