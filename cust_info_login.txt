@@ -6,11 +6,11 @@ Ziggy Stardust _ 92957 _ zstardust _ 1337zs
 Stevie Wonder _ 61884 _ swonder _ abcdef
 Steven Rogers _ 42291 _ srogers _ c26y5k
 Natalia Romanova _ 87151 _ nromanova _ 7w5bzs
-Marlon Jackson _ 35423 _ mjackson _ s5u759
+Marlon Jackson _ 35423 _ mjackson _ lonson
 Natalie Prass _ 89612 _ nprass _ 9n94b8
 Tito Jackson _ 87171 _ tjackson _ f528i7
 Jackie Jackson _ 99115 _ jjackson _ c2j402
-Marlon Brando _ 66469 _ mbrando _ t38zw0
+Marlon Brando _ 66469 _ mbrando _ apples
 Randy Jackson _ 21627 _ rjackson _ p03z32
 Selina Kyle _ 83736 _ skyle _ 7q9111
 Lois Lane _ 18516 _ llane _ 5h7820
@@ -21,4 +21,4 @@ Michael Jackson _ 43726 _ mjackson1 _ 1at371
 Jermaine Jackson _ 31779 _ jjackson1 _ 4mutfp
 Janet Jackson _ 46227 _ jjackson2 _ 0n9m7d
 Marcus Aelius _ 34565 _ maelius _ 7lnimh
-Bruce Wayne _ 59481 _ bwayne _ z4vjd7
+Bruce Wayne _ 59481 _ bwayne _ batman

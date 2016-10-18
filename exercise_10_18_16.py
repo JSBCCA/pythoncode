@@ -24,7 +24,8 @@ while lock is True:
 lock = True
 while lock is True:
     new_pass = input(
-        "What would you like your new password to be? Must be 6 characters. ")
+        "What would you like your new password to be? Must be 6 characters. ").strip(
+        )
     if len(new_pass) == 6:
         # get user position in order to change password
         for item in cust_login:
