@@ -8,26 +8,18 @@ users_and_passwords = []
 for customer in cust_login:
     unpw = [customer[2], customer[3]]
     users_and_passwords.append(unpw)
-# check for username
+# check for username and password
 lock = True
 while lock is True:
-    username = input("Please enter your username. Type 'Q' to quit. ").strip()
-    if username == 'Q':
+    username = input("Please enter your username. Type 'q' to quit. ").strip()
+    if username.lower() == 'q':
         sys.exit()
-    else:
-        for user in users_and_passwords:
-            if username == user[0]:
-                lock = False
-# check for password
-lock = True
-while lock is True:
-    password = input("Please enter your password. Type 'Q' to quit. ").strip()
-    if password == 'Q':
+    password = input("Please enter your password. ").strip()
+    if password.lower() == 'q':
         sys.exit()
-    else:
-        for user in users_and_passwords:
-            if password == user[1]:
-                lock = False
+    for user in users_and_passwords:
+        if username == user[0] and password == user[1]:
+            lock = False
 # ask for new password
 lock = True
 while lock is True:
