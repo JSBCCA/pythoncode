@@ -49,5 +49,5 @@ for person in usernames:
 # Ex: Sean Anthony _ 123125 _ santhony _ e4anbq
 with open('cust_info_login.txt', 'w') as file:
     for i in range(len(usernames)):
-        file.write(cust_info[i][0] + ' _ ' + cust_info[i][1] + ' _ ' +
-                   usernames[i] + ' _ ' + passwords[i] + '\n')
+        file.write(customer_info[i] + ' _ ' + usernames[i] + ' _ ' + passwords[
+            i] + '\n')
