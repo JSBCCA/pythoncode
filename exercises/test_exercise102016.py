@@ -1,9 +1,19 @@
 from exercise_10_20_16 import *
 
 
-def test_...():
+def test_user_dict():
     b = ccc
-
     j = ...(b)
-
     assert j == y
+
+
+def test_read_user():
+    ...
+    ...
+    assert ...
+
+
+def test_read_users():
+    ...
+    ...
+    assert ...
