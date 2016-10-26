@@ -8,7 +8,4 @@ def palindrome(t):  # remove non-letters, make lower
 
 if __name__ == '__main__':
     yours = input("Insert your palindrome: ")
-    if palindrome(yours) is True:
-        print("It's a palindrome.")
-    else:
-        print("Not a palindrome.")
+    print(palindrome(yours))
