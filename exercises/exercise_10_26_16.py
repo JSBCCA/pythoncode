@@ -3,7 +3,7 @@ def pal(p):  # str.isalpha is function form of the method .isalpha()
     return np == np[::-1] and len(np) > 0  # check if palindrome
 
 
-# py.test test_exercise102616.py --cov=exercise_10_26_16.py --cov-report=html
+# py.test exercise_10_26_16.py --cov=exercise_10_26_16.py --cov-report=html
 def test_palin():
     assert pal('mom')
     assert pal('dog') is False
