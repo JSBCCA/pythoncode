@@ -4,7 +4,7 @@ def pal(p):  # str.isalpha is function form of the method .isalpha()
 
 
 # py.test exercise_10_26_16.py --cov=exercise_10_26_16.py --cov-report=html
-def test_palin():
+def test_pal():
     assert pal('mom')
     assert pal('dog') is False
     assert pal('9874^&') is False
