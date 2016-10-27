@@ -1,5 +1,5 @@
 def square_dict(num):
-    return dict((n, n * n) for n in range(1, int(num) + 1))
+    return {n: n * n for n in range(1, int(num) + 1)}
 
 
 # py.test exercise_10_27_16.py --cov=exercise_10_27_16.py --cov-report=html
