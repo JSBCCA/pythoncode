@@ -4,7 +4,7 @@ def square_dict(num):
 
 # py.test exercise_10_27_16.py --cov=exercise_10_27_16.py --cov-report=html
 def test_square_dict():
-    assert square_dict(4) == {1: 1, 2: 4, 3: 9, 4: 16}
+    assert square_dict(3) == {1: 1, 2: 4, 3: 9}
     assert square_dict(0) == {}
     assert square_dict(-1) == {}
 
