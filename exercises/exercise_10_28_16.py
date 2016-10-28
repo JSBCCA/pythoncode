@@ -2,11 +2,13 @@ import random
 
 
 def random_translate(text):
+    # make a dictionary of letters with random letter values
     al = 'abcdefghijklmnopqrstuvwxyz'
     shuff = list(al)
     random.shuffle(shuff)
     dictionary = {al[i]: ''.join(shuff)[i] for i in range(25)}
     new_str = ''
+    # translate text to be your dictionary values
     for c in text:
         if c in dictionary:
             new_str += dictionary[c]
