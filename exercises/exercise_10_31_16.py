@@ -19,7 +19,7 @@ def change_format(phonelist):
                 file.write('(' + str(p[2:5]) + ') ' + str(p[6:9]) + '-' + str(
                     p[10:]) + '\n')
             else:
-                file.write("Unknown format\n")
+                file.write("???????????\n")
 
 
 if __name__ == '__main__':
