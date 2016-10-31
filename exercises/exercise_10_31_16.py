@@ -7,21 +7,17 @@ def change_format(phonelist):
     with open('new_phone_data.txt', 'w') as file:
         for p in phonelist:
             if len(p) == 10:
-                phone = '(' + str(p[:3]) + ') ' + str(p[3:6]) + '-' + str(p[
-                    6:]) + '\n'
-                file.write(phone)
+                file.write('(' + str(p[:3]) + ') ' + str(p[3:6]) + '-' + str(p[
+                    6:]) + '\n')
             elif len(p) == 11:
-                phone = '(' + str(p[1:4]) + ') ' + str(p[4:7]) + '-' + str(p[
-                    7:]) + '\n'
-                file.write(phone)
+                file.write('(' + str(p[1:4]) + ') ' + str(p[4:7]) + '-' + str(
+                    p[7:]) + '\n')
             elif len(p) == 12:
-                phone = '(' + str(p[:3]) + ') ' + str(p[4:7]) + '-' + str(p[
-                    8:]) + '\n'
-                file.write(phone)
+                file.write('(' + str(p[:3]) + ') ' + str(p[4:7]) + '-' + str(p[
+                    8:]) + '\n')
             elif len(p) == 14:
-                phone = '(' + str(p[2:5]) + ') ' + str(p[6:9]) + '-' + str(p[
-                    10:]) + '\n'
-                file.write(phone)
+                file.write('(' + str(p[2:5]) + ') ' + str(p[6:9]) + '-' + str(
+                    p[10:]) + '\n')
             else:
                 file.write("Unknown format\n")
 
