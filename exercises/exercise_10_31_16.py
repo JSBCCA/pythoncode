@@ -4,7 +4,6 @@ with open('phone_data.txt', 'r') as file:
 
 # change phone numbers to (555) 555-5555 format and add them to new_phone_data.txt
 def change_format(phonelist):
-    newlist = []
     with open('new_phone_data.txt', 'w') as file:
         for p in phonelist:
             if len(p) == 10:
