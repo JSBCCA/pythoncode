@@ -16,7 +16,7 @@ def r_numeral(num):
     "int -> string"
     if not str(num).isdigit():
         return "Only numbers please."
-    elif not int(num) >= 1 or not int(num) <= 100:
+    elif int(num) < 1 or int(num) > 100:
         return "Must be between 1 and 100."
     else:
         return to_numeral(int(num))
