@@ -11,7 +11,7 @@ def to_numeral(num):
     return result
 
 
-# returns roman numeral of given integer if it is between 1 and 100.
+# returns roman numeral of given integer if it is between 1 and 100
 def r_numeral(num):
     "int -> string"
     if not str(num).isdigit():
