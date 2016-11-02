@@ -5,22 +5,12 @@ with open('phone_data.txt', 'r') as file:
 # change lines to dictionaries
 def parse(line):
     "str -> dict"
-    if len(line) == 10:
-        new_dict = {'area': str(line[:3]),
-                    'exchange': str(line[3:6]),
-                    'subscriber': str(line[6:])}
-    elif len(line) == 11:
-        new_dict = {'area': str(line[1:4]),
-                    'exchange': str(line[4:7]),
-                    'subscriber': str(line[7:])}
-    elif len(line) == 12:
-        new_dict = {'area': str(line[:3]),
-                    'exchange': str(line[4:7]),
-                    'subscriber': str(line[8:])}
-    elif len(line) == 14:
-        new_dict = {'area': str(line[2:5]),
-                    'exchange': str(line[6:9]),
-                    'subscriber': str(line[10:])}
+    line = line.replace("-", "")
+    if len(line) > 10:
+        line = line[1:]
+    new_dict = {'area': line[:3],
+                'exchange': line[3:6],
+                'subscriber': line[6:]}
     return new_dict
 
 
