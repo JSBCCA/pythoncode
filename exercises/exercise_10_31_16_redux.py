@@ -5,29 +5,32 @@ with open('phone_data.txt', 'r') as file:
 # change lines to dictionaries
 def first(line):
     "str -> dict"
-    for p in phone_numbers:
-        if len(p) == 10:
-            ...
-        elif len(p) == 11:
-            ...
-        elif len(p) == 12:
-            ...
-        elif len(p) == 14:
-            ...
-    return '''{
-        x: 555,
-        x: 555,
-        x: 5555
-    }'''
+    if len(line) == 10:
+        new_dict = {'area': str(line[:3]),
+                    'exchange': str(line[3:6]),
+                    'subscriber': str(line[6:])}
+    elif len(line) == 11:
+        new_dict = {'area': str(line[1:4]),
+                    'exchange': str(line[4:7]),
+                    'subscriber': str(line[7:])}
+    elif len(line) == 12:
+        new_dict = {'area': str(line[:3]),
+                    'exchange': str(line[4:7]),
+                    'subscriber': str(line[8:])}
+    elif len(line) == 14:
+        new_dict = {'area': str(line[2:5]),
+                    'exchange': str(line[6:9]),
+                    'subscriber': str(line[10:])}
+    return new_dict
 
 
 # change dictionaries to strings
 def second(d):
     "dict -> str"
-    ...
-    return '(555) 555-5555'
+    return '(' + d['area'] + ') ' + d['exchange'] + '-' + d['subscriber']
 
 
+# py.test exercise_10_31_16_redux.py --cov=exercise_10_31_16_redux.py --cov-report=html
 def test_first():
     assert first("1-476-177-8875") == {
         'area': '476',
@@ -60,5 +63,6 @@ def test_second():
 
 
 if __name__ == '__main__':
-    for phone in phone_numbers:
-        print(second(first(phone)))
+    with open('new_phone_data.txt', 'w') as file:
+        for phone in phone_numbers:
+            file.write(second(first(phone)) + '\n')
