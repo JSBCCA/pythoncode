@@ -3,7 +3,7 @@ with open('phone_data.txt', 'r') as file:
 
 
 # change lines to dictionaries
-def first(line):
+def parse(line):
     "str -> dict"
     if len(line) == 10:
         new_dict = {'area': str(line[:3]),
@@ -25,37 +25,37 @@ def first(line):
 
 
 # change dictionaries to strings
-def second(d):
+def format(d):
     "dict -> str"
     return '(' + d['area'] + ') ' + d['exchange'] + '-' + d['subscriber']
 
 
 # py.test exercise_10_31_16_redux.py --cov=exercise_10_31_16_redux.py --cov-report=html
-def test_first():
-    assert first("1-476-177-8875") == {
+def test_parse():
+    assert parse("1-476-177-8875") == {
         'area': '476',
         'exchange': '177',
         'subscriber': '8875'
     }
-    assert first("8586359388") == {
+    assert parse("8586359388") == {
         'area': '858',
         'exchange': '635',
         'subscriber': '9388'
     }
-    assert first("17461538482") == {
+    assert parse("17461538482") == {
         'area': '746',
         'exchange': '153',
         'subscriber': '8482'
     }
-    assert first("218-690-7902") == {
+    assert parse("218-690-7902") == {
         'area': '218',
         'exchange': '690',
         'subscriber': '7902'
     }
 
 
-def test_second():
-    assert second({
+def test_format():
+    assert format({
         'area': '476',
         'exchange': '177',
         'subscriber': '8875'
@@ -65,4 +65,4 @@ def test_second():
 if __name__ == '__main__':
     with open('new_phone_data.txt', 'w') as file:
         for phone in phone_numbers:
-            file.write(second(first(phone)) + '\n')
+            file.write(format(parse(phone)) + '\n')
