@@ -1,11 +1,11 @@
-# returns roman numeral of number
+# returns roman numeral of number between 1 and 100
 def to_numeral(num):
     "int -> string"
     ints = (100, 90, 50, 40, 10, 9, 5, 4, 1)
     nums = ('C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I')
     result = ""
     for i in range(len(ints)):
-        count = int(num / ints[i])
+        count = int(num // ints[i])
         result += nums[i] * count
         num -= ints[i] * count
     return result
