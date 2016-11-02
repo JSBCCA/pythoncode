@@ -25,7 +25,7 @@ def parse(line):
 
 
 # change dictionaries to strings
-def format(d):
+def format_phone(d):
     "dict -> str"
     return '(' + d['area'] + ') ' + d['exchange'] + '-' + d['subscriber']
 
@@ -54,8 +54,8 @@ def test_parse():
     }
 
 
-def test_format():
-    assert format({
+def test_format_phone():
+    assert format_phone({
         'area': '476',
         'exchange': '177',
         'subscriber': '8875'
@@ -65,4 +65,4 @@ def test_format():
 if __name__ == '__main__':
     with open('new_phone_data.txt', 'w') as file:
         for phone in phone_numbers:
-            file.write(format(parse(phone)) + '\n')
+            file.write(format_phone(parse(phone)) + '\n')
