@@ -4,11 +4,8 @@ def words_to_count(words):
     result = ""
     words = words.strip().split()
     for word in range(len(words)):
-        if words[word] == words[-1]:
-            result += str(len(words[word]))
-        else:
-            result += str(len(words[word])) + " "
-    return result
+        result += str(len(words[word])) + " "
+    return result.strip()
 
 
 # py.test exercise_11_4_16.py --cov=exercise_11_4_16.py --cov-report=html
