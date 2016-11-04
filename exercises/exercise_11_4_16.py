@@ -1,3 +1,4 @@
+# converts a string into a string of word lengths
 def words_to_count(words):
     """str -> str"""
     result = ""
