@@ -1,9 +1,8 @@
 import random
-ranks = ['A', '2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K']
-possible_cards = ['S', 'D', 'C', 'H']
+ranks, suits = list('A123456789TJQK'), list('SDCH')
 deck = []
-for suit in possible_cards:
-    for card in ranks:
-        deck.append(card + suit)
+for suit in suits:
+    for num in ranks:
+        deck.append(num + suit)
 random.shuffle(deck)
 print(deck)
