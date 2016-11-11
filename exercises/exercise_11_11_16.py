@@ -1,8 +1,8 @@
-from random import randint  # import randint
+import random  # import random
 import sys  # import ability to exit
 str_rand_num = "99"  # start with 99
 while True:  # start loop
-    new_str_rand_num = str(randint(2, 150))  # set new randint
+    new_str_rand_num = str(random.randint(2, 150))  # set new randint
     print(str_rand_num + " little bugs in the code\n" + str_rand_num +
           " little bugs\nTake one down, patch it around\n" + new_str_rand_num +
           " little bugs in the code")  # use both randints
