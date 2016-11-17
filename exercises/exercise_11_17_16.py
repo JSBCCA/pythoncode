@@ -1,4 +1,3 @@
-# put all info into list of lists
 list_of_list = []
 with open("Sacramentorealestatetransactions.csv", 'r') as file:
     for line in file:
@@ -12,6 +11,5 @@ for item in list_of_list[1:]:
     if (int(item[9]) >= lowest_price) and (int(item[9]) <= highest_price):
         new_list.append(item)
 # show homes
-for home in new_list:
-    print("\n$" + home[9] + "\n" + home[0] + ", " + home[1] + ", " + home[2] +
-          ", " + home[3])
+for h in new_list:
+    print("\n${}\n{}, {}, {}, {}".format(h[9], h[0], h[1], h[2], h[3]))
