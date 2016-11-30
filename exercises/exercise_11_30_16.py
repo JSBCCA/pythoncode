@@ -7,5 +7,5 @@ l = []
 for word in tale:
     l.append("".join(filter(str.isalpha, word)))
 
-# Counter makes a counter object, an ordered dictionary
+# Counter makes an ordered dictionary
 print(Counter(filter(lambda x: x.istitle() and len(x) > 4, l)).most_common(10))
