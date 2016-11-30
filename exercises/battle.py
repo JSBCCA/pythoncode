@@ -22,7 +22,6 @@ chars = {
     'chara': [99, 'evil'],
     'gaster': [2, '???']
 }
-# 197
 
 first = input("First battler: ").lower().strip()
 second = input("Second battler: ").lower().strip()
