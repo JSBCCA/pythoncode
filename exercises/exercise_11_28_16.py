@@ -1,22 +1,23 @@
-from urllib.request import urlopen
+with open("tale_of.txt", 'r') as file:
+    l = file.read().lower().split()  # list of all of our words
 
-txtFile = urlopen("http://introcs.cs.princeton.edu/java/data/tale.txt")
-string = txtFile.read().decode('utf-8')
+new_l = []
+for word in l:
+    # str.isalpha is function form of the method .isalpha()
+    # check word 'word' for non letters
+    new_l.append("".join(list(filter(str.isalpha, word))))
 
-# escape all the words into a consistent format
-l = string.lower().split()  # list of all of our words
-
+# put all words into dictionary
 d = {}
+# d = {word: int}
 for word in l:
     if word in d:
         d[word] += 1
-    # elif len(word) > 5:
-    # d[word] = 1
     else:
         d[word] = 1
-# {word: int, word: int...}
 
 # find the 10 most common words
+
 # get the values
 v = list(d.values())
 # sort the values
