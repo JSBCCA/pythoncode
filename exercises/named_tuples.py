@@ -20,11 +20,10 @@ Darth_Vader = Battler("darth_vader.jpg", 82, "none", ["none"])
 # some characters can have multiple attributes
 Alucard = Battler("alucard.jpg", 85, "none",
                   ["bloodlust", "body made of magic"])
-# you can then use these items how you see fit
 
+# you can then use these items how you see fit
 print(Mario.image)
 print(Mario.power)
 print(Mario.strength)
-
 if "body made of magic" in Mario.attributes:
     print("Mario loses!")
