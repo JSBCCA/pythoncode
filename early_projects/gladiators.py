@@ -3,38 +3,10 @@ from termcolor import colored, cprint
 import math
 import os
 
-os.system("printf '\\e[8;23;52t'")
 
-
-def first():
-    name1 = input("What is Player one's name?").strip().title()
-    if name1 in ['James', 'Ragnarok', 'Infinity', 'Oblivion', 'Perseus',
-                 'Excalibur', 'Big the Cat', 'Zero', 'Shadow', 'Omega',
-                 'Edgar', 'Neo', 'Sibert', 'Pruitt', 'Bullock', 'Peyton',
-                 'Taylor', 'Roxas', 'Sarah', 'Xemnas', 'Silver', 'Baka', 'X']:
-        print('\nWow, cool name!')
-        return name1
-    else:
-        return name1
-
-
-def second():
-    name2 = input("What is Player two's name?").strip().title()
-    if name2 in ['James', 'Ragnarok', 'Infinity', 'Oblivion', 'Perseus',
-                 'Excalibur', 'Big the Cat', 'Zero', 'Shadow', 'Omega',
-                 'Edgar', 'Neo', 'Sibert', 'Pruitt', 'Bullock', 'Peyton',
-                 'Taylor', 'Roxas', 'Sarah', 'Xemnas', 'Silver', 'Baka', 'X']:
-        print('\nWow, cool name!')
-        return name2
-    else:
-        return name2
-
-
-print('\n' * 20)
-print('_' * 52)
-name1 = first()
-print('\n')
-name2 = second()
+def name(player):
+    name = input("What is Player " + player + "'s name? ").strip().title()
+    return name
 
 
 def bar(n, color):
@@ -42,10 +14,6 @@ def bar(n, color):
     num_space = 10 - num_colored
     return colored(" " * num_colored, color, attrs=['reverse']) +\
                   (" " * num_space)
-
-
-health_bar = lambda n: bar(n, 'green')
-rage_bar = lambda n: bar(n, 'red')
 
 
 def showstuff(g1, g2):
@@ -60,34 +28,32 @@ def showstuff(g1, g2):
     print('\n\n')
 
 
-def play1turn():
-    x = input(str(name1) + ": Attack or heal? ").strip().lower()
+def playerturn(glad1, glad2, name):
+    x = input(str(name) + ": Attack or heal? ").strip().lower()
     if x in ['attack', 'a']:
-        print("\n\n" + str(name1) + " attacks!")
+        print("\n\n" + str(name) + " attacks!")
         return glad1.attack(glad2)
     elif x in ['heal', 'h']:
-        print("\n\n" + str(name1) + " tries to heal!")
+        print("\n\n" + str(name) + " tries to heal!")
         return glad1.heal()
     else:
         print("Sorry, try again.")
-        play1turn()
-
-
-def play2turn():
-    y = input(str(name2) + ": Attack or heal? ").strip().lower()
-    if y in ['attack', 'a']:
-        print("\n\n" + str(name2) + " attacks!")
-        return glad2.attack(glad1)
-    elif y in ['heal', 'h']:
-        print("\n\n" + str(name2) + " tries to heal!")
-        return glad2.heal()
-    else:
-        print("Sorry, try again.")
-        play2turn()
+        playerturn()
 
 #  Game where two gladiators fight to the death; controlled via input.
 # 'name', 'health', 'rage', 'lowest damage', 'highest damage'
 # 'health' starts at 100, 'rage' is a percentage that starts at 0.
+
+os.system("printf '\\e[8;23;52t'")
+
+print('\n' * 20)
+print('_' * 52)
+name1 = name("One")
+print('\n')
+name2 = name("Two")
+
+health_bar = lambda n: bar(n, 'green')
+rage_bar = lambda n: bar(n, 'red')
 
 glad1 = Gladiator(100, 0, 5, 15)
 glad2 = Gladiator(100, 0, 6, 16)
@@ -104,7 +70,8 @@ print('\n' * 6)
 
 showstuff(glad1, glad2)
 while (glad1.isDead() or glad2.isDead()) is False:
-    play1turn()
+
+    playerturn(glad1, glad2, name1)
     print('\n' + ('_' * 52))
     showstuff(glad1, glad2)
     if glad1.isDead() is True:
@@ -114,7 +81,7 @@ while (glad1.isDead() or glad2.isDead()) is False:
         print(str(name1) + " wins!!")
         break
 
-    play2turn()
+    playerturn(glad2, glad1, name2)
     print('\n' + ('_' * 52))
     showstuff(glad1, glad2)
     if glad1.isDead() is True:
