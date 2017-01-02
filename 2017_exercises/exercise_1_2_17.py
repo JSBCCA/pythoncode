@@ -11,13 +11,14 @@ alice = alice.split(" ")
 
 l = []
 for word in alice:
-    l.append("".join(filter(str.isalpha, word)))
+    if len(word) > 0:
+        l.append("".join(filter(str.isalpha, word)))
 
     # lambda x: .isalpha and len(x) > 0, word
 
 print("Number of words: " + str(len(l)))
 
-print("Number of paragraphs: ")
+print("Number of paragraphs: ?")
 
 print("Twenty most common words: ")
 # Counter makes an ordered dictionary
