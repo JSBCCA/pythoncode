@@ -12,5 +12,12 @@ for word in alice:
     l.append("".join(filter(str.isalpha, word)))
 
 # Counter makes an ordered dictionary
-print(Counter(l).most_common(20))
-print('hi')
+print("Number of words: " + str(len(l)))
+print("Number of paragraphs: ")
+print("Twenty most common words: ")
+placeholder_variable = Counter(l).most_common(20)
+for i in range(len(placeholder_variable)):
+    if placeholder_variable[i] == placeholder_variable[-1]:
+        print(str(placeholder_variable[i][0]))
+    else:
+        print(str(placeholder_variable[i][0]) + ", ", end="")
