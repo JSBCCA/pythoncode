@@ -1,7 +1,7 @@
 from collections import Counter
 
 with open("alice_in.txt", 'r') as file:
-    alice = file.readlines()  # list of all of our words
+    alice = file.readlines()  # list of all of our lines
 
 alice = alice[32:3371]
 alice = "".join(alice)
