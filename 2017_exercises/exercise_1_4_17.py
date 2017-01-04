@@ -4,7 +4,7 @@ with open("alice_in.txt", 'r') as alice:
 with open("reversed_alice.txt", 'w') as file:
     file.write(x[::-1])
 
-rev = " ".join(w[::-1] for w in x.split())
+rev = "".join(w[::-1] for w in x.split(" "))
 with open("alice_words_reversed.txt", 'w') as file:
     file.write(rev)
 
